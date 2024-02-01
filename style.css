@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+li {
+    /* border: 1px solid red; */
+    position: relative;
+    margin: 1rem 0;
+}
+
+label {
+    display: inline-block;
+}
+
+.textinput, button {
+    width: 100%;
+}
+
+.textinput {
+    padding: 18px 7px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+button {
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: white;
+    background: black;
+    padding: 9px 0;
+    border-radius: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.gender {
+    text-align: left;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.form-wrapper {
+    letter-spacing: 0.5px;
+    /* border: 1px solid blue; */
+    padding: 10rem;
+    width: 340px;
+    margin: 0 auto; 
+}
+
+.form-list {
+    list-style: none;
+    /* border: 1px solid red; */
+}
+
+.btn-li {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Labels */
+
+.textlabel-click {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+}
+
+.textlabel {
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    font-size: 16px;
+}
+
+
+
+.gender label, .terms label {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.gender input, .terms input {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Form validity */
