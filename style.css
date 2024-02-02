@@ -133,3 +133,11 @@ button:hover {
 .star {
     color: red;
 }
+
+legend {
+    margin-left: 8px;
+}
+
+fieldset {
+    border-radius: 5px;
+}

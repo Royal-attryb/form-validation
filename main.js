@@ -6,7 +6,7 @@ const mapping = {
 let isNameError = false, isEmailError = false, isPhoneError= false;
 const nameRE = /^[a-z]+ [a-z]+$/;
 const emailRE = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-const phoneRE = /[6-9][0-9]{9}/;
+const phoneRE = /[6-9][0-9]{9}$/;
 
 function handleFocusIn(elem) {
     elem.classList.remove("error");
