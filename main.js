@@ -9,11 +9,10 @@ const emailRE = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*
 const phoneRE = /[6-9][0-9]{9}/;
 
 function handleFocusIn(elem) {
+    elem.classList.remove("error");
     var id = elem.id;
-    
     const target = document.getElementsByClassName("label")[mapping[id]];
-    // console.log(target);
-    // target.
+
     const place = `Enter your ${id}`;
     elem.placeholder = place;
     target.classList.remove("textlabel");
@@ -25,7 +24,7 @@ function handleFocusOut(elem) {
     {
         var id = elem.id;
         const target = document.getElementsByClassName("label")[mapping[id]];
-        // console.log(target);
+
         elem.placeholder = "";
         target.classList.remove("textlabel-click");
         target.classList.add("textlabel");
@@ -44,13 +43,25 @@ function validate(event) {
 
     
     if (!phoneTest)
+    {  
+        const elem = document.getElementById("phone");
+        elem.classList.add("error");
         error = error + "Phone number must contain 10 digits starting with digits 6-9.\n";
+    }
 
     if (!nameTest)
+    {
+        const elem = document.getElementById("name");
+        elem.classList.add("error");
         error = error + "Name format <firstname lastname>.\n";
+    }
 
     if (!emailTest)
+    {
+        const elem = document.getElementById("email");
+        elem.classList.add("error");
         error = error + "Invalid Email format.\n";
+    }
 
     if (phoneTest && nameTest && emailTest)
     {
