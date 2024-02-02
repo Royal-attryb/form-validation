@@ -15,6 +15,10 @@ label {
     display: inline-block;
 }
 
+.label {
+    transition: 0.3s;
+}
+
 .textinput, button {
     width: 100%;
 }
