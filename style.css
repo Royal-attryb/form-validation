@@ -8,7 +8,7 @@
 li {
     /* border: 1px solid red; */
     position: relative;
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 
 label {
@@ -53,12 +53,17 @@ button:hover {
     margin: 1rem;
 }
 
+.terms, .gender {
+    font-weight: bold;
+} 
+
 .form-wrapper {
+    background: rgba(255, 248, 220, 0.3);
     letter-spacing: 0.5px;
     /* border: 1px solid blue; */
-    padding: 10rem;
+    padding: 3rem 5rem;
     width: 340px;
-    margin: 0 auto; 
+    margin: 5rem auto; 
 }
 
 .form-list {
@@ -78,7 +83,7 @@ button:hover {
 /* Labels */
 
 .textlabel-click {
-    color: red;
+    color: blue;
     font-weight: bold;
     position: absolute;
     top: 5px;
@@ -103,8 +108,25 @@ button:hover {
     vertical-align: middle;
 }
 
+.terms-li {
+    margin: 2.2rem 0;
+    font-weight: bold;
+}
 .gender input, .terms-li input {
     margin-left: 0.5rem;
     vertical-align: middle;
+}
+
+.error-alert {
+    color: red;
+    font-weight: bold;
+    font-size: 0.75rem;
+    position: absolute;
+    top: 110%;  
+    left: 1%;
+}
+
+.heading {
+    text-align: center;
 }
 

@@ -3,7 +3,7 @@ const mapping = {
     "email": 1,
     "phone": 2,
 }
-
+let isNameError = false, isEmailError = false, isPhoneError= false;
 const nameRE = /^[a-z]+ [a-z]+$/;
 const emailRE = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const phoneRE = /[6-9][0-9]{9}/;
@@ -39,28 +39,57 @@ function validate(event) {
     const nameTest = nameRE.test(inputs.name);
     const emailTest = emailRE.test(inputs.email);
     const phoneTest = phoneRE.test(inputs.phone);
-    let error = "";
+    let nameError = "", emailError = "", phoneError= "";
 
-    
     if (!phoneTest)
     {  
         const elem = document.getElementById("phone");
         elem.classList.add("error");
-        error = error + "Phone number must contain 10 digits starting with digits 6-9.\n";
+        phoneError = "Phone number must contain 10 digits starting with digits 6-9.\n";
+        if (!isPhoneError)
+            displayErrorAlert(elem, phoneError);
+        isPhoneError = true;
+    }
+
+    else {
+        const elem = document.getElementById("phone");
+        if (isPhoneError)
+            removeErrorAlert(elem);
+        isPhoneError = false;
     }
 
     if (!nameTest)
     {
         const elem = document.getElementById("name");
         elem.classList.add("error");
-        error = error + "Name format <firstname lastname>.\n";
+        nameError =  "Name format <firstname lastname>.\n";
+        if (!isNameError)
+            displayErrorAlert(elem, nameError);
+        isNameError = true;
+    }
+
+    else {
+        const elem = document.getElementById("name");
+        if (isNameError)
+            removeErrorAlert(elem);
+        isNameError = false;
     }
 
     if (!emailTest)
     {
         const elem = document.getElementById("email");
         elem.classList.add("error");
-        error = error + "Invalid Email format.\n";
+        emailError =  "Invalid Email format.\n";
+        if (!isEmailError)
+            displayErrorAlert(elem, emailError);
+        isEmailError = true;
+    }
+
+    else {
+        const elem = document.getElementById("email");
+        if (isEmailError)
+            removeErrorAlert(elem);
+        isEmailError = false;
     }
 
     if (phoneTest && nameTest && emailTest)
@@ -72,10 +101,22 @@ function validate(event) {
             alert("Please accept the terms and conditions.");
         }
 
-        else
-            alert("Submitted Successfully!!");
+        // else
+        //     alert("Submitted Successfully!!");
     }
 
-    else
-        alert(error);
+    // else
+    //     alert(nameError + phoneError + emailError); 
+}
+
+function displayErrorAlert(elem, error) {  
+    const errorAlert = document.createElement("p");  //add error alert
+    const errorMsg = document.createTextNode(error);
+    errorAlert.appendChild(errorMsg);
+    errorAlert.classList.add("error-alert");
+    elem.parentNode.appendChild(errorAlert);
+}
+
+function removeErrorAlert (elem) {
+    elem.parentNode.removeChild(elem.parentNode.getElementsByTagName("p")[0]);
 }
