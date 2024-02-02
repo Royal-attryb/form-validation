@@ -9,39 +9,40 @@
 </head>
 <body>
     <!-- <form action="/index.html" method="post" class="form-wrapper">  -->
-    <form class="form-wrapper" onsubmit="validate()" >
+    <form class="form-wrapper" onsubmit="validate(event)" >
         <ul class="form-list">
-            <li>
+            <li class="name-li">
                 <label  class="label textlabel" for="name">Name</label>
-                <input class="textinput" id="name" type="text" onfocus="handleFocusIn(this)" onfocusout="handleFocusOut(this)" required />           
+                <input class="textinput" id="name" type="text" onfocus="handleFocusIn(this)" onfocusout="handleFocusOut(this)" autocomplete="off" required />           
             </li>
-            <li>
+            <li class="email-li">
                 <label  class="label textlabel" for="email">Email</label>
-                <input class="textinput" id="email" type="email" onfocus="handleFocusIn(this)" onfocusout="handleFocusOut(this)" required />
+                <input class="textinput" id="email" type="email" onfocus="handleFocusIn(this)" onfocusout="handleFocusOut(this)" autocomplete="off" required />
             </li>
             <fieldset>
                 <legend>Gender</legend>
                 <li class="gender">
-                    <input id="male" type="radio" name="gender" />
+                    <input id="male" type="radio" name="gender" value="male" />
                     <label for="male">Male</label>
                 <li class="gender">
-                    <input id="female" type="radio" name="gender" />
+                    <input id="female" type="radio" name="gender" value="female" />
                     <label for="female">Female</label>
-                </li>
+                </li>   
             </fieldset>
             </li>
-            <li>
+            <li class="phone-li">
                 <label  class="label textlabel" for="phone">Phone</label>
-                <input class="textinput phone" id="phone" type="tel" pattern="[6-9][0-9]{9}" onfocus="handleFocusIn(this)" onfocusout="handleFocusOut(this)" required />
+                <input class="textinput phone" id="phone" type="tel" onfocus="handleFocusIn(this)" onfocusout="handleFocusOut(this)" autocomplete="off" required />
             </li>
-            <li class="terms">
-                <input id="terms" type="checkbox" />
+            <li class="terms-li">
+                <input class="terms" id="terms" type="checkbox" />
                 <label for="terms">Kindly agree to the terms and conditions.</label>
             </li>
             <li class="btn-li">
                 <button type="submit">SUBMIT</button>
             </li>
         </ul>
+        
     </form>
 </body>
 </html>

@@ -19,7 +19,7 @@ label {
 }
 
 .textinput {
-    padding: 18px 7px;
+    padding: 20px 7px;
     padding-bottom: 5px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -65,29 +65,33 @@ button:hover {
 /* Labels */
 
 .textlabel-click {
+    color: red;
+    font-weight: bold;
     position: absolute;
     top: 5px;
     left: 10px;
     font-size: 12px;
+    opacity: 1;
 }
 
 .textlabel {
     position: absolute;
-    top: 12px;
+    top: 13px;
     left: 8px;
     font-size: 16px;
+    opacity: 0.5;
 }
 
 
 
-.gender label, .terms label {
+.gender label, .terms-li label {
     margin-left: 0.5rem;
     vertical-align: middle;
 }
 
-.gender input, .terms input {
+.gender input, .terms-li input {
     margin-left: 0.5rem;
     vertical-align: middle;
 }
 
-/* Form validity */
+/* Animation Label */
