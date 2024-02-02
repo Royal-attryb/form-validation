@@ -62,7 +62,7 @@ function validate(event) {
     {
         const elem = document.getElementById("name");
         elem.classList.add("error");
-        nameError =  "Name format <firstname lastname>.\n";
+        nameError =  "Format <firstname lastname>.\n";
         if (!isNameError)
             displayErrorAlert(elem, nameError);
         isNameError = true;
@@ -101,12 +101,9 @@ function validate(event) {
             alert("Please accept the terms and conditions.");
         }
 
-        // else
-        //     alert("Submitted Successfully!!");
+        else
+            alert("Submitted Successfully!!");
     }
-
-    // else
-    //     alert(nameError + phoneError + emailError); 
 }
 
 function displayErrorAlert(elem, error) {  
