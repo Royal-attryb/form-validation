@@ -4,7 +4,7 @@ const mapping = {
     "phone": 2,
 }
 let isNameError = false, isEmailError = false, isPhoneError= false;
-const nameRE = /^[a-z]+ [a-z]+$/;
+const nameRE = /^[A-Z][a-z]* [A-Z.][a-z]*$/; //first lastname
 const emailRE = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const phoneRE = /^[6-9][0-9]{9}$/;
 
@@ -62,7 +62,7 @@ function validate(event) {
     {
         const elem = document.getElementById("name");
         elem.classList.add("error");
-        nameError =  "Format <firstname lastname>.\n";
+        nameError =  "Format <Firstname Lastname>.\n";
         if (!isNameError)
             displayErrorAlert(elem, nameError);
         isNameError = true;
